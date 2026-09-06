@@ -1,0 +1,10 @@
+name: teach-me
+version: 0.1.0
+description: "Adaptive tutor that tracks subjects, lesson progress and evidence-based mastery checks."
+hermes_requires: ">=0.20.6"
+author: "Hermes Five Choices"
+license: "Proprietary"
+distribution_owned:
+  - SOUL.md
+  - profile.yaml
+  - skills/

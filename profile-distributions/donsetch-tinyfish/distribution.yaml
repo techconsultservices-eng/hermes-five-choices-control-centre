@@ -1,0 +1,10 @@
+name: donsetch-tinyfish
+version: 0.1.0
+description: "Grounded web research and permitted structured extraction with claim citations and row-level provenance."
+hermes_requires: ">=0.20.6"
+author: "Hermes Five Choices"
+license: "Proprietary"
+distribution_owned:
+  - SOUL.md
+  - profile.yaml
+  - skills/

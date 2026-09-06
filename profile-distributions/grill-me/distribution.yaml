@@ -1,0 +1,10 @@
+name: grill-me
+version: 0.1.0
+description: "Constructive pressure-test specialist that identifies assumptions, weaknesses, evidence gaps and next actions."
+hermes_requires: ">=0.20.6"
+author: "Hermes Five Choices"
+license: "Proprietary"
+distribution_owned:
+  - SOUL.md
+  - profile.yaml
+  - skills/

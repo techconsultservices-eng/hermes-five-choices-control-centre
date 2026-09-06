@@ -1,0 +1,50 @@
+# Build outputs and immutable local release binaries
+/dist/
+/installer/build/
+/releases/**/*.exe
+/releases/**/*.zip
+/releases/**/*.tar.gz
+
+# Runtime build staging (generated or third-party source)
+/runtime-build/source/
+/runtime-build/wheelhouse/
+/runtime-build/dist/
+/runtime-build/runtime-manifest.json
+/runtime-build/relocation-test/
+/runtime-build/python-*.zip
+
+# Local verification homes can contain credentials, sessions and databases
+/verification/*
+!/verification/release-candidate-evidence.json
+
+# Product operational state
+/data/
+/logs/
+/outputs/
+/receipts/
+*.log
+*.db
+*.db-*
+*.lock
+.env
+.env.*
+auth.json
+USER.md
+MEMORY.md
+gateway_state.json
+dashboard_sessions.json
+
+# Python / Node / editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

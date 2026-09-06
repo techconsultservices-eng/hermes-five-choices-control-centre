@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hermes Five Choices</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Primary navigation">
+    <div class="brand">
+      <div class="brand-mark">H5</div>
+      <div><strong>Hermes Five Choices</strong><small>Focused help, one choice at a time</small></div>
+    </div>
+    <nav class="nav-list">
+      <div class="nav-label">Overview</div>
+      <button class="nav-item active" data-page="dashboard"><span class="nav-icon">⌂</span><span>Dashboard</span></button>
+      <div class="nav-label">Five choices</div>
+      <button class="nav-item" data-page="tech"><span class="nav-icon">1</span><span>Tech Support</span></button>
+      <button class="nav-item" data-page="web"><span class="nav-icon">2</span><span>Web Search & Scrape</span></button>
+      <button class="nav-item" data-page="image"><span class="nav-icon">3</span><span>Image Creator</span></button>
+      <button class="nav-item" data-page="teach"><span class="nav-icon">4</span><span>Teach Me</span></button>
+      <button class="nav-item" data-page="grill"><span class="nav-icon">5</span><span>Grill Me</span></button>
+      <div class="nav-label">Product</div>
+      <button class="nav-item" data-page="system"><span class="nav-icon">⚙</span><span>Advanced & System</span></button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="health-line"><span class="status-dot" id="healthDot"></span><span id="healthText">Checking Hermes…</span></div>
+      <small>Powered by Hermes Agent</small>
+    </div>
+  </aside>
+
+  <main class="main-shell">
+    <header class="topbar">
+      <div><h1 id="pageTitle">Dashboard</h1><p id="pageSubtitle">Choose the right specialist and begin.</p></div>
+      <div class="top-actions">
+        <div class="theme-switch" aria-label="Colour scheme">
+          <button data-theme-choice="slate" class="active" title="Slate"></button>
+          <button data-theme-choice="navy" title="Navy"></button>
+          <button data-theme-choice="plum" title="Plum"></button>
+          <button data-theme-choice="graphite" title="Graphite"></button>
+        </div>
+        <span class="runtime-chip">Pinned candidate · 0.20.6</span>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="page active" id="page-dashboard">
+        <div class="overview-grid">
+          <article class="card intro-card">
+            <div class="eyebrow">Your starting point</div>
+            <h2>Five focused ways to get useful work done</h2>
+            <p>Diagnose a computer problem, research the web, create an image, learn a subject or pressure-test an idea. Each choice keeps its own conversation and workspace.</p>
+            <div class="choice-grid" id="choiceGrid"></div>
+          </article>
+          <article class="card coordinator-card">
+            <div class="card-heading"><div><div class="eyebrow">General help</div><h2>Assistant</h2></div><span class="connection-chip" data-profile-state="assistant">Checking…</span></div>
+            <p class="muted">Ask where to begin, compare the five choices or coordinate a general request.</p>
+            <div class="chat-log" data-log="dashboard"><div class="message assistant"><div class="message-meta">Assistant</div><div>Tell me what you are trying to accomplish and I’ll point you to the right choice.</div></div></div>
+            <form class="composer" data-chat-form="dashboard">
+              <textarea data-input="dashboard" rows="2" placeholder="What would you like help with?"></textarea>
+              <button type="submit" class="primary">Send</button>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <div id="workspacePages"></div>
+
+      <section class="page" id="page-system">
+        <div class="system-grid">
+          <article class="card">
+            <div class="eyebrow">Advanced access</div><h2>Full Hermes Desktop</h2>
+            <p>Open the native Hermes interface for Bot Mode, profile administration and supported advanced features.</p>
+            <button class="primary" id="openDesktop">Open Hermes Desktop</button>
+            <div class="notice">PC Fix uses the same <code>pcfix</code> profile on this dashboard and in native Bot Mode. No duplicate agent is created.</div>
+          </article>
+          <article class="card">
+            <div class="eyebrow">Runtime policy</div><h2>Controlled releases only</h2>
+            <p>Hermes Agent 0.20.6 is a provisional frozen target. This product will not follow upstream latest or apply unattended updates.</p>
+            <dl class="facts"><div><dt>Runtime</dt><dd id="runtimeVersion">Checking…</dd></div><div><dt>Companion</dt><dd id="companionState">Checking…</dd></div><div><dt>Profiles</dt><dd id="profileCount">Checking…</dd></div></dl>
+          </article>
+          <article class="card wide">
+            <div class="eyebrow">Local product state</div><h2>Persistence and privacy</h2>
+            <p>Chats, pane widths, outputs, sources, theme, teaching progress and Grill Me reports persist locally. Credentials remain server-side and are never placed in dashboard JavaScript.</p>
+            <button class="ghost danger" id="clearUiState">Clear dashboard display state</button>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

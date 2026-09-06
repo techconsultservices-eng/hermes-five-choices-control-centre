@@ -1,0 +1,28 @@
+# Secrets and credentials
+auth.json
+.env
+.env.EXAMPLE
+# Runtime and user data
+state.db*
+projects.db*
+response_store.db*
+memories/
+sessions/
+logs/
+plans/
+workspace/
+home/
+cron/
+cache/
+checkpoints/
+backups/
+state-snapshots/
+*.lock
+*.pid
+# Generated and local data
+image_cache/
+audio_cache/
+document_cache/
+browser_screenshots/
+local/
+node_modules/

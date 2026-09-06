@@ -1,0 +1,70 @@
+{
+  "product": "Hermes Five Choices",
+  "version": "0.1.0",
+  "evidence_recorded_at": "2026-09-05T11:56:12+09:30",
+  "status": {
+    "controlled_second_laptop_test": "ready",
+    "customer_release": "blocked"
+  },
+  "artifacts": {
+    "test_installer": {
+      "path": "dist/Hermes-Five-Choices-Test-Installer-0.1.0.exe",
+      "bytes": 310799872,
+      "sha256": "59b674a499cfeb61d3c4894b14f74fbee905efb88a1045f5f9c002e15a59b03a",
+      "authenticode": "NotSigned"
+    },
+    "product_zip": {
+      "path": "dist/hermes-five-choices-dashboard-0.1.0.zip",
+      "bytes": 314180942,
+      "sha256": "d9ebfdc95a82e7aa450730129485d9ba5d4e9623770b7e44326e7a9926650d3b"
+    },
+    "runtime_zip": {
+      "path": "runtime-build/dist/hermes-five-choices-runtime-0.20.6-win64.zip",
+      "bytes": 150263073,
+      "sha256": "aef78ff0c2f93623f4c05435ae7671e1de932a81cd44fadda8e4ebaed04b4143"
+    }
+  },
+  "frozen_runtime": {
+    "hermes_version": "0.20.6",
+    "source_commit": "26350357d76e4508c8df9304a3374bdc5a6f6220",
+    "source_tree": "e5eaa11e762b0920e92f5a4d2c1a773d17718efe",
+    "python": "3.11.15",
+    "uv_lock_sha256": "c7badb9d95bd177b0c80220f71799e3c1cb12118e4d9a5e7f37e843bebb8a1de",
+    "pyproject_sha256": "8fdd016886353ed18ad293c840a0422f0f750b64b30d1e19ad21649441b3f80b",
+    "package_lock_sha256": "83beeba3f6e7826312444c7b64067488afae9ed88ad7326ecef61ac235bab86d"
+  },
+  "local_verification": {
+    "unit_and_transaction_tests": "18/18 passed",
+    "powershell_syntax": "passed",
+    "python_compile": "passed",
+    "javascript_syntax": "passed",
+    "package_secret_scan": "passed",
+    "runtime_relocation_offline_install": "passed",
+    "actual_exe_clean_install": "passed",
+    "six_profile_readback": "6/6 passed",
+    "redacted_runtime_and_gateway_diagnostics": "passed",
+    "detached_restart_helper": "passed",
+    "edge_pre_auth_browser_smoke": "passed",
+    "repair_while_services_running": "passed",
+    "state_preservation_across_repair": "passed",
+    "rollback": "passed",
+    "packaged_data_preserving_uninstall": "passed with exit code 0",
+    "native_desktop_build": "passed",
+    "native_desktop_ui": "rendered BOTS tab and all six profile selectors"
+  },
+  "remaining_release_gates": [
+    "Run the supplied installer on a separate clean Windows 10/11 x64 laptop or VM.",
+    "Complete real customer-owned OAuth including cancellation, retry, success and revocation checks.",
+    "Run harmless real inference through all six profiles after account setup.",
+    "Verify factual citations, scrape-row provenance, image export, Teach Me persistence and Grill Me report saving end to end.",
+    "Verify native Desktop Bot Mode inference through pcfix after account setup.",
+    "Demonstrate the required credential-at-rest policy; provider OAuth currently uses Hermes native profile storage and has not been proven DPAPI/Credential-Manager backed.",
+    "Acquire a Windows code-signing certificate and sign the customer-release installer.",
+    "Repeat install, restart, repair, rollback and uninstall on the separate clean environment."
+  ],
+  "notes": [
+    "The product uses loopback gateway port 8648 to avoid disturbing a standard Hermes listener on 8642.",
+    "No credentials, sessions, memories, databases or customer data are included in the artifacts.",
+    "An obsolete local verification runtime from an earlier self-deleting uninstaller retained locked DLLs and may require reboot cleanup; the final packaged two-stage uninstaller was independently verified to remove its app/runtime completely."
+  ]
+}

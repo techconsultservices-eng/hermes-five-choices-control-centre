@@ -1,0 +1,43 @@
+schema_version: 1
+status: provisional_candidate
+product:
+  name: Hermes Five Choices
+  platform: windows
+  dashboard_revision: "001-five-choices"
+  update_policy: controlled_only
+  automatic_updates: false
+hermes_runtime:
+  provisional_version: "0.20.6"
+  approved: false
+  observed_source_commit: "26350357d76e4508c8df9304a3374bdc5a6f6220"
+  python: "3.11.15"
+  verification_hashes:
+    uv_lock_sha256: "c7badb9d95bd177b0c80220f71799e3c1cb12118e4d9a5e7f37e843bebb8a1de"
+    pyproject_sha256: "8fdd016886353ed18ad293c840a0422f0f750b64b30d1e19ad21649441b3f80b"
+    package_lock_sha256: "83beeba3f6e7826312444c7b64067488afae9ed88ad7326ecef61ac235bab86d"
+profiles:
+  - assistant
+  - pcfix
+  - donsetch-tinyfish
+  - image-creator
+  - teach-me
+  - grill-me
+release_gate:
+  signed_installer: false
+  clean_windows_vm_passed: false
+  exact_runtime_reconstructed: false
+  all_six_live_inference_passed: false
+  bot_mode_passed: false
+  restart_persistence_passed: false
+  recovery_rollback_uninstall_passed: false
+local_candidate_evidence:
+  six_distribution_install_readback_passed: true
+  pcfix_native_display_metadata_passed: true
+  package_secret_and_forbidden_state_scan_passed: true
+  package_manifest_hash_verification_passed: true
+  bootstrapper_install_verify_rollback_uninstall_passed: true
+  unsigned_iexpress_wrapper_extract_and_isolated_install_passed: true
+  exact_runtime_drift_guard_implemented: true
+notes:
+  - Never package a live Hermes home or developer credentials.
+  - This manifest records a development candidate, not an approved customer release.

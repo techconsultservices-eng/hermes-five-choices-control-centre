@@ -1,0 +1,10 @@
+name: image-creator
+version: 0.1.0
+description: "Creates, previews, revises and exports user-approved images in PNG, JPEG and WebP formats."
+hermes_requires: ">=0.20.6"
+author: "Hermes Five Choices"
+license: "Proprietary"
+distribution_owned:
+  - SOUL.md
+  - profile.yaml
+  - skills/

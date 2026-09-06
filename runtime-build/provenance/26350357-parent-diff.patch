@@ -1,0 +1,49 @@
+diff --git a/tests/gateway/test_telegram_channel_posts.py b/tests/gateway/test_telegram_channel_posts.py
+index 72a41af5d98525923f9578209b21f96e50780255..6fe8bec97c365ea851e6ede8b66cd371bf1f5e1a 100644
+--- a/tests/gateway/test_telegram_channel_posts.py
++++ b/tests/gateway/test_telegram_channel_posts.py
+@@ -32,6 +32,7 @@ def _build_telegram_stubs():
+     telegram_ext_mod.Application = object
+     telegram_ext_mod.CommandHandler = object
+     telegram_ext_mod.CallbackQueryHandler = object
++    telegram_ext_mod.InlineQueryHandler = object
+     telegram_ext_mod.MessageHandler = object
+     telegram_ext_mod.ContextTypes = SimpleNamespace(DEFAULT_TYPE=type(None))
+     telegram_ext_mod.filters = SimpleNamespace()
+diff --git a/tests/gateway/test_telegram_status_update.py b/tests/gateway/test_telegram_status_update.py
+index 6627bf051c8b37cde1e70216689b66d1f33cbe66..04e52c781a011a7468e9520fcc3f82018157b67f 100644
+--- a/tests/gateway/test_telegram_status_update.py
++++ b/tests/gateway/test_telegram_status_update.py
+@@ -47,6 +47,7 @@ def _install_fake_telegram(monkeypatch):
+     fake_ext.Application = object
+     fake_ext.CommandHandler = object
+     fake_ext.CallbackQueryHandler = object
++    fake_ext.InlineQueryHandler = object
+     fake_ext.MessageHandler = object
+     fake_ext.ContextTypes = SimpleNamespace(DEFAULT_TYPE=object)
+     fake_ext.filters = object
+diff --git a/tests/gateway/test_telegram_thread_fallback.py b/tests/gateway/test_telegram_thread_fallback.py
+index 00ba5eb306ebb52f00b02f838486dda91f503cf9..046479c2a70dcd51030ddb30b490e40504cebf3f 100644
+--- a/tests/gateway/test_telegram_thread_fallback.py
++++ b/tests/gateway/test_telegram_thread_fallback.py
+@@ -99,6 +99,7 @@ _fake_telegram_ext = types.ModuleType("telegram.ext")
+ _fake_telegram_ext.Application = object
+ _fake_telegram_ext.CommandHandler = object
+ _fake_telegram_ext.CallbackQueryHandler = object
++_fake_telegram_ext.InlineQueryHandler = object
+ _fake_telegram_ext.MessageHandler = object
+ _fake_telegram_ext.TypeHandler = object
+ _fake_telegram_ext.ContextTypes = SimpleNamespace(DEFAULT_TYPE=object)
+diff --git a/tests/gateway/test_telegram_username_chat_id.py b/tests/gateway/test_telegram_username_chat_id.py
+index b40d9ceee67f5079096579f58d306f8dc8734a12..fe2533a30875166fc8bcedde207481cbfa5d15c9 100644
+--- a/tests/gateway/test_telegram_username_chat_id.py
++++ b/tests/gateway/test_telegram_username_chat_id.py
+@@ -95,7 +95,7 @@ _fake_telegram_constants.ChatType = SimpleNamespace(
+ _fake_telegram.constants = _fake_telegram_constants
+ _fake_telegram_ext = types.ModuleType("telegram.ext")
+ for _attr in (
+-    "Application", "CommandHandler", "CallbackQueryHandler",
++    "Application", "CommandHandler", "CallbackQueryHandler", "InlineQueryHandler",
+     "MessageHandler", "TypeHandler",
+ ):
+     setattr(_fake_telegram_ext, _attr, object)
