@@ -10,7 +10,7 @@ A Windows-first Hermes dashboard with one general assistant and five focused spe
 
 ## GitHub Pages preview
 
-The `web/` directory is deployed as a static visual preview. Navigation, colour schemes, pane resizing, and local browser state work on GitHub Pages.
+The `web/` directory is ready to deploy as a static visual preview using the included manual Pages workflow. Navigation, colour schemes, pane resizing, and local browser state work on GitHub Pages. Pages must first be enabled for the repository; private-repository availability depends on the GitHub account plan.
 
 Chat, profile health, and **Open Hermes Desktop** require the local Python companion and a configured Hermes runtime. Those features will show as unavailable in the Pages preview because credentials and profile routes deliberately remain server-side.
 

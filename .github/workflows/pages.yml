@@ -1,11 +1,7 @@
 name: Deploy dashboard preview to GitHub Pages
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "web/**"
-      - ".github/workflows/pages.yml"
+  # Enable GitHub Pages for the repository before running this workflow.
   workflow_dispatch:
 
 permissions:
